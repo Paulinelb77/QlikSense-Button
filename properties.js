@@ -85,15 +85,6 @@ define(["./util"], function(util) {
                                     options: [{
                                         value: "b",
                                         label: "Button"
-                                    }, {
-                                        value: "s",
-                                        label: "Select"
-                                    }, {
-                                        value: "f",
-                                        label: "Field"
-                                    }, {
-                                        value: "l",
-                                        label: "Slider"
                                     }],
                                     defaultValue: "f"
                                 },
@@ -121,45 +112,6 @@ define(["./util"], function(util) {
                                     },
                                     show: function(data) {
                                         return data.render === "b" || data.render === "s";
-                                    }
-                                },
-                                min: {
-                                    ref: "min",
-                                    label: "Min",
-                                    type: "number",
-                                    defaultValue: 0,
-                                    expression: "optional",
-                                    show: function(data) {
-                                        return data.render === "l";
-                                    }
-                                },
-                                max: {
-                                    ref: "max",
-                                    label: "Max",
-                                    type: "number",
-                                    defaultValue: 100,
-                                    expression: "optional",
-                                    show: function(data) {
-                                        return data.render === "l";
-                                    }
-                                },
-                                step: {
-                                    ref: "step",
-                                    label: "Step",
-                                    type: "number",
-                                    defaultValue: 1,
-                                    expression: "optional",
-                                    show: function(data) {
-                                        return data.render === "l";
-                                    }
-                                },
-                                rangelabel: {
-                                    ref: "rangelabel",
-                                    label: "Slider label",
-                                    type: "boolean",
-                                    defaultValue: false,
-                                    show: function(data) {
-                                        return data.render === "l";
                                     }
                                 }
                             }
