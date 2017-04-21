@@ -1,26 +1,31 @@
 /*global define*/
-define(["qlik", "./util", "./properties"], function (qlik, util, prop) {
-    'use strict';
-
-    function getClass(style, type, selected) {
-        switch (style) {
-            case "material":
-            case "bootstrap":
-                if (selected) {
-                    return "selected";
-                }
-                break;
-            default:
-                switch (type) {
-                    case 'button':
-                        return selected ? 'qui-button-selected lui-button lui-button--success' : 'qui-button lui-button';
-                    case 'select':
-                        return 'qui-select lui-select';
-                    case 'input':
-                        return 'qui-input lui-input';
-                }
+define(["qlik", "./util", "./properties"], 
+    function (qlik, util, prop) {
+        'use strict';
+    
+        function calcPercent(el) {
+            return (el.value - el.min) * 100 / (el.max - el.min);
         }
-    }
+
+        function getClass(style, type, selected) {
+            switch (style) {
+                case "material":
+                case "bootstrap":
+                    if (selected) {
+                        return "selected";
+                    }
+                    break;
+                default:
+                    switch (type) {
+                        case 'button':
+                            return selected ? 'qui-button-selected lui-button lui-button--success' : 'qui-button lui-button';
+                        case 'select':
+                            return 'qui-select lui-select';
+                        case 'input':
+                            return 'qui-input lui-input';
+                    }
+            }
+        }
 
     function getWidth(layout) {
         if (layout.render === "l") {
@@ -37,7 +42,7 @@ define(["qlik", "./util", "./properties"], function (qlik, util, prop) {
         }
     }
 
-    util.addStyleSheet("extensions/variable/variable.css");
+    util.addStyleSheet("extensions/QlikSense-Button-master/variable.css");
     return {
         initialProperties: prop.initialProperties,
         definition: prop.definition,
